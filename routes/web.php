@@ -18,6 +18,9 @@ use App\Http\Controllers\ClientController;
 */
 
     Route::Get('/',[ClientController::class, 'home']);
+    Route::Get('/shop', [ClientController::class, 'shop']);
+    Route::Get('/cart', [ClientController::class, 'cart']);
+    Route::Get('/checkout', [ClientController::class, 'checkout']);
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
