@@ -1,4 +1,8 @@
 @extends('client_layout.client')
+@section('title')
+Checkout
+@endsection
+
 @section('content')
     <!-- start content -->
 	

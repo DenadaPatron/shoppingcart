@@ -1,5 +1,10 @@
-@extends('client_layout.client');
-@section('content');
+@extends('client_layout.client')
+
+@section('title')
+Home
+@endsection
+
+@section('content')
 	<!-- start content -->
    <section id="home-section" class="hero">
 		<div class="home-slider owl-carousel">
