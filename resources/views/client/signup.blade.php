@@ -33,12 +33,14 @@
 		<div class="container-login100" style="background-image: url('frontend/login/images/bg-01.jpg');">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
+						<a href="{{url('/')}}">
+							<span class="login100-form-logo">
+									<i class="zmdi zmdi-landscape"></i>
+							</span>
+						</a>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						New account
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -60,13 +62,13 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Sign up
 						</button>
 					</div>
 
 					<div class="text-center p-t-90">
-						<a class="txt1" href="{{url:('/signup')}}">
-							Create a new account? Sign up
+						<a class="txt1" href="{{url('/login')}}">
+							Already have an account? Sign in
 						</a>
 					</div>
 				</form>
