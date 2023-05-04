@@ -59,10 +59,10 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-			  <li class="nav-item active"><a href="/.." class="nav-link">Home</a></li>
-			  <li class="nav-item active"><a href="shop.html" class="nav-link">shop</a></li>
-	          
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+			  <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
+			  <li class="nav-item active"><a href="{{url('/shop')}}" class="nav-link">shop</a></li>      
+	      <li class="nav-item cta cta-colored"><a href="{{url('/cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+        <li class="nav-item active"><a href={{url('/login')}} class="nav-link"><span class="fa fa-user"></span>Login</a></li>    
 
 	        </ul>
 	      </div>
@@ -71,7 +71,7 @@
     <!-- END nav -->
 
   {{-- start content --}}
-
+      @yield('content')
   {{-- end content --}}
 
   <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
@@ -191,6 +191,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="frontend/js/google-map.js"></script>
 <script src="frontend/js/main.js"></script>
+@yield('script')
   
 </body>
 </html>
