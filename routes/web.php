@@ -23,7 +23,8 @@ use App\Http\Controllers\ClientController;
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);
     Route::Get('/signup', [ClientController::class, 'signup']);
-    
+    Route::Get('/dashboard', [ClientController::class, 'dashboard']);
+
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
