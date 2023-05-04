@@ -29,8 +29,4 @@ class ClientController extends Controller
     public function signup(){
         return view('client.signup');
     }
-    
-    public function dashboard(){
-        return view('admin.dashboard');
-    }
 }
