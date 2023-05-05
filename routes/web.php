@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ use App\Http\Controllers\AdminController;
 
 
     Route::Get('/admin', [AdminController::class, 'admin']);
+
+    Route::Get('/addcategory', [CategoryController::class, 'addcategory']);
 
 
 // Route::get('/', function () {
