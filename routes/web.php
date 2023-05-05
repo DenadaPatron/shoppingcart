@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ use App\Http\Controllers\CategoryController;
 
     Route::Get('/addcategory', [CategoryController::class, 'addcategory']);
     Route::Get('/categories', [CategoryController::class, 'categories']);
+
+    Route::Get('/addslider', [SliderController::class, 'addslider']);
+
 
 
 // Route::get('/', function () {
