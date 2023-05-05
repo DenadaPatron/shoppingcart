@@ -30,6 +30,7 @@ use App\Http\Controllers\CategoryController;
     Route::Get('/admin', [AdminController::class, 'admin']);
 
     Route::Get('/addcategory', [CategoryController::class, 'addcategory']);
+    Route::Get('/categories', [CategoryController::class, 'categories']);
 
 
 // Route::get('/', function () {
