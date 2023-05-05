@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ use App\Http\Controllers\ClientController;
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);
     Route::Get('/signup', [ClientController::class, 'signup']);
-    Route::Get('/dashboard', [ClientController::class, 'dashboard']);
+
+
+    Route::Get('/admin', [AdminController::class, 'admin']);
 
 
 // Route::get('/', function () {

@@ -18,7 +18,7 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="backend/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="backend/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
@@ -68,7 +68,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="frontend/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="backend/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -84,7 +84,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="frontend/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="backend/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -100,7 +100,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="frontend/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="backend/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -156,7 +156,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.html" class="brand-link">
-      <img src="frontend/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="backend/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -165,7 +165,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="frontend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="backend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -205,7 +205,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/addcategory.html" class="nav-link">
+                <a href="backend/pages/forms/addcategory.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add category</p>
                 </a>
@@ -213,7 +213,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/categories.html" class="nav-link">
+                <a href="backend/pages/tables/categories.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Categories</p>
                 </a>
@@ -231,7 +231,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/addslider.html" class="nav-link">
+                <a href="backend/pages/forms/addslider.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add slider</p>
                 </a>
@@ -239,7 +239,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/sliders.html" class="nav-link">
+                <a href="backend/pages/tables/sliders.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Sliders</p>
                 </a>
@@ -257,7 +257,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/addproduct.html" class="nav-link">
+                <a href="backend/pages/forms/addproduct.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add product</p>
                 </a>
@@ -265,7 +265,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/products.html" class="nav-link">
+                <a href="backend/pages/tables/products.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Products</p>
                 </a>
@@ -283,7 +283,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/orders.html" class="nav-link">
+                <a href="backend/pages/tables/orders.html" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Orders</p>
                 </a>
@@ -458,7 +458,7 @@
                       <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                     </div>
                     <!-- /.direct-chat-infos -->
-                    <img class="direct-chat-img" src="frontend/dist/img/user1-128x128.jpg" alt="message user image">
+                    <img class="direct-chat-img" src="backend/dist/img/user1-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
                       Is this template really for free? That's unbelievable!
@@ -474,7 +474,7 @@
                       <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                     </div>
                     <!-- /.direct-chat-infos -->
-                    <img class="direct-chat-img" src="frontend/dist/img/user3-128x128.jpg" alt="message user image">
+                    <img class="direct-chat-img" src="backend/dist/img/user3-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
                       You better believe it!
@@ -490,7 +490,7 @@
                       <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                     </div>
                     <!-- /.direct-chat-infos -->
-                    <img class="direct-chat-img" src="frontend/dist/img/user1-128x128.jpg" alt="message user image">
+                    <img class="direct-chat-img" src="backend/dist/img/user1-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
                       Working with AdminLTE on a great new app! Wanna join?
@@ -506,7 +506,7 @@
                       <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                     </div>
                     <!-- /.direct-chat-infos -->
-                    <img class="direct-chat-img" src="frontend/dist/img/user3-128x128.jpg" alt="message user image">
+                    <img class="direct-chat-img" src="backend/dist/img/user3-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
                       I would love to.
@@ -523,7 +523,7 @@
                   <ul class="contacts-list">
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user1-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user1-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -538,7 +538,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user7-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user7-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -553,7 +553,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user3-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user3-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -568,7 +568,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user5-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user5-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -583,7 +583,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user6-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user6-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -598,7 +598,7 @@
                     <!-- End Contact Item -->
                     <li>
                       <a href="#">
-                        <img class="contacts-list-img" src="frontend/dist/img/user8-128x128.jpg" alt="User Avatar">
+                        <img class="contacts-list-img" src="backend/dist/img/user8-128x128.jpg" alt="User Avatar">
 
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
@@ -961,10 +961,10 @@
 <!-- overlayScrollbars -->
 <script src="backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="frontend/dist/js/adminlte.js"></script>
+<script src="backend/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="frontend/dist/js/pages/dashboard.js"></script>
+<script src="backend/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="frontend/dist/js/demo.js"></script>
+<script src="backend/dist/js/demo.js"></script>
 </body>
 </html>
