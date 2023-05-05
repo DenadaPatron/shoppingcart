@@ -88,6 +88,13 @@
 
 @endsection
 
+@section('style')
+
+  <!-- Datatables bootstrap -->
+  <link rel="stylesheet" href="backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+
+@endsection
+
 
 @section('scripts')
 
