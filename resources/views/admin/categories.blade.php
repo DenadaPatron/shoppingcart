@@ -92,15 +92,15 @@
 @section('scripts')
 
 <!-- DataTables -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="backend/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="backend/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 
-<script src="../../dist/js/bootbox.min.js"></script>
+<script src="backend/dist/js/bootbox.min.js"></script>
 <!-- page script -->
 
 <script>

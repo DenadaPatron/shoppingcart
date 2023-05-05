@@ -67,10 +67,10 @@
 @endsection
 
 <!-- jquery-validation -->
-<script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="backend/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="backend/plugins/jquery-validation/additional-methods.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="backend/dist/js/adminlte.min.js"></script>
 
 
 @section('scripts')
