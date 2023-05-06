@@ -36,13 +36,13 @@
               <!-- form start -->
 
               {{-- <form> --}}
-                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory'
+                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory',
                               'method'  =>  'POST'])!!}
                   {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
-                    {{Form::label('','Category name' ['for' => 'exampleInputEmail1'])}}
-                    {{Form::text('','Category name',['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}}} 
+                    {{Form::label('','Category name', ['for' => 'exampleInputEmail1'])}}
+                    {{Form::text('','Category name',['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
                     {{-- <label for="exampleInputEmail1">Category name</label>
                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>
@@ -53,7 +53,7 @@
                   
                   <input type="submit" class="btn btn-primary" value="Save" >
                 </div>
-                {{!!Form::close()!!}}
+                {!!Form::close()!!}
               {{-- </form> --}}
             </div>
             <!-- /.card -->

@@ -33,8 +33,9 @@ use App\Http\Controllers\ProductController;
     Route::Get('/admin', [AdminController::class, 'admin']);
 
     Route::Get('/addcategory', [CategoryController::class, 'addcategory']);
+    Route::Post('/savecategory', [CategoryController::class, 'savecategory']);
     Route::Get('/categories', [CategoryController::class, 'categories']);
-    Route::Get('/savecategory', [CategoryController::class, 'savecategory']);
+    
 
     Route::Get('/addslider', [SliderController::class, 'addslider']);
     Route::Get('/sliders', [SliderController::class, 'sliders']);
