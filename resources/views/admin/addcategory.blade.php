@@ -32,6 +32,28 @@
               <div class="card-header">
                 <h3 class="card-title">Add category</small></h3>
               </div>
+
+              {{-- display success message --}}
+              
+              @if (Session::has('status'))
+                  <div class="alert alert-success">
+                    {{Session::get('status')}}
+                  </div>  
+              @endif
+            {{-- Dislay if category not unique & give error   --}}
+            @if(count($errors) > 0)
+              <div class="alert alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">x</button>
+                  <strong>Dang!</strong> There were some problems with your input:<br>
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                      </li>{{$error}}</li>
+                      @endforeach
+                </ul>
+              </div>  
+            @endif
+
+
               <!-- /.card-header -->
               <!-- form start -->
 
@@ -50,8 +72,8 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                  
-                  <input type="submit" class="btn btn-primary" value="Save" >
+                  {{Form::submit('Save', ['class' => 'btn btn-primary' ])}}
+                  {{-- <input type="submit" class="btn btn-primary" value="Save" > --}}
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}
