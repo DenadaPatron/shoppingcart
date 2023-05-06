@@ -44,7 +44,6 @@
           
           <li class="nav-item has-treeview  {{request()->is('addcategory') ? 'menu-open' : ''}}
                                             {{request()->is('categories') ? 'menu-open' : ''}}">
-
             <a href="#" class="nav-link {{request()->is('addcategory') ? 'active' : ''}}
                                         {{request()->is('categories') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
@@ -71,8 +70,10 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview {{request()->is('addslider') ? 'menu-open' : ''}}">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{request()->is('addslider') ? 'menu-open' : ''}}
+                                           {{request()->is('sliders') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{request()->is('addslider') ? 'active' : ''}}
+                                        {{request()->is('sliders') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Sliders
@@ -81,7 +82,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/addslider')}}" class="nav-link">
+                <a href="{{url('/addslider')}}" class="nav-link {{request()->is('addslider') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add slider</p>
                 </a>
@@ -89,7 +90,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('/slider')}}" class="nav-link">
+                <a href="{{url('/sliders')}}" class="nav-link {{request()->is('sliders') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Sliders</p>
                 </a>
@@ -97,8 +98,10 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{request()->is('products') ? 'menu-open' : ''}}
+                                           {{request()->is('addproduct') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{request()->is('products') ? 'active' : ''}}
+                                        {{request()->is('addproduct') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Products
@@ -107,7 +110,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/forms/addproduct.html" class="nav-link">
+                <a href="{{url('/addproduct')}}" class="nav-link {{request()->is('addproduct') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add product</p>
                 </a>
@@ -115,7 +118,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/tables/products.html" class="nav-link">
+                <a href="{{url('/products')}}" class="nav-link {{request()->is('products') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Products</p>
                 </a>
@@ -123,8 +126,8 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview {{request()->is('orders') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{request()->is('orders') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Orders
@@ -133,7 +136,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/tables/orders.html" class="nav-link">
+                <a href="{{url('/orders')}}" class="nav-link {{request()->is('orders') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Orders</p>
                 </a>
