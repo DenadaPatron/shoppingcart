@@ -23,8 +23,9 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+            {{-- blade template open menu and highlight dashboard selection if in admin dir  --}}
+          <li class="nav-item has-treeview {{request()->is('admin') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{request()->is('admin') ? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -33,7 +34,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="{{url('/admin')}}" class="nav-link {{request()->is('admin') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v1</p>
                 </a>
@@ -41,8 +42,11 @@
             </ul>
           </li>
           
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview  {{request()->is('addcategory') ? 'menu-open' : ''}}
+                                            {{request()->is('categories') ? 'menu-open' : ''}}">
+
+            <a href="#" class="nav-link {{request()->is('addcategory') ? 'active' : ''}}
+                                        {{request()->is('categories') ? 'active' : ''}}">
               <i class="nav-icon fas fa-folder"></i>
               <p>
                 Categories
@@ -51,7 +55,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/forms/addcategory.html" class="nav-link">
+                <a href="{{url('/addcategory')}}" class="nav-link {{request()->is('addcategory') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add category</p>
                 </a>
@@ -59,7 +63,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/tables/categories.html" class="nav-link">
+                <a href="{{url('/categories')}}" class="nav-link {{request()->is('categories') ? 'active' : ''}}">
                   <i class="far fa-file nav-icon"></i>
                   <p>Categories</p>
                 </a>
@@ -67,7 +71,7 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview {{request()->is('addslider') ? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-folder"></i>
               <p>
@@ -77,7 +81,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/forms/addslider.html" class="nav-link">
+                <a href="{{url('/addslider')}}" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Add slider</p>
                 </a>
@@ -85,7 +89,7 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="backend/pages/tables/sliders.html" class="nav-link">
+                <a href="{{url('/slider')}}" class="nav-link">
                   <i class="far fa-file nav-icon"></i>
                   <p>Sliders</p>
                 </a>
