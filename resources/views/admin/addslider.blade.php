@@ -58,7 +58,7 @@
   </section>
   <!-- /.content -->
 </div>
-
+</html>
 @endsection
 
 
