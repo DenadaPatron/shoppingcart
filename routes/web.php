@@ -8,6 +8,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Controllers\SliderController;
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);
     Route::Get('/signup', [ClientController::class, 'signup']);
+    Route::Get('/orders', [ClientController::class, 'orders']);
 
 
     Route::Get('/admin', [AdminController::class, 'admin']);
@@ -34,7 +36,10 @@ use App\Http\Controllers\SliderController;
     Route::Get('/categories', [CategoryController::class, 'categories']);
 
     Route::Get('/addslider', [SliderController::class, 'addslider']);
+    Route::Get('/sliders', [SliderController::class, 'sliders']);
 
+    Route::Get('/addproduct', [ProductController::class, 'addproduct']);
+    Route::Get('/products', [ProductController::class, 'products']);
 
 
 // Route::get('/', function () {
