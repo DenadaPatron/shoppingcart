@@ -37,6 +37,7 @@ use App\Http\Controllers\ProductController;
     Route::Get('/categories', [CategoryController::class, 'categories']);
     Route::Get('/edit_category/{id}', [CategoryController::class, 'edit_category']);
     Route::Post('/updatecategory', [CategoryController::class, 'updatecategory']);
+    Route::Get('/delete_category/{id}', [CategoryController::class, 'delete_category']);
     
 
     Route::Get('/addslider', [SliderController::class, 'addslider']);
