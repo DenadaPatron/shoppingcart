@@ -15,9 +15,11 @@ class ProductController extends Controller
     }
 
     public function products()
-    {
-        
-        return view('admin.products');
+    {   
+        //view all products
+        $produts = Product::All();
+        //return to page with all products from Product model
+        return view('admin.products')->with('products', $produts);
     }
     public function saveproduct(Request $request)
     {
@@ -56,5 +58,6 @@ class ProductController extends Controller
 
         return back()->with('status', 'Product Added Successfully');
     }
+
 
 }
