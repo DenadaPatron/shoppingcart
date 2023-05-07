@@ -48,6 +48,8 @@ use App\Http\Controllers\ProductController;
     Route::Get('/edit_product/{id}', [ProductController::class, 'edit_product']);
     Route::Post('/updateproduct', [ProductController::class, 'updateproduct']);
     Route::Get('/delete_product/{id}', [ProductController::class, 'delete_product']);
+    Route::Get('/deactivate_product/{id}', [ProductController::class, 'deactivate_product']);
+    Route::Get('/activate_product/{id}', [ProductController::class, 'activate_product']);
     Route::Post('/saveproduct', [ProductController::class, 'saveproduct']);
 
 
