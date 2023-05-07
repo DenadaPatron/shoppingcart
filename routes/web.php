@@ -42,6 +42,8 @@ use App\Http\Controllers\ProductController;
 
     Route::Get('/addslider', [SliderController::class, 'addslider']);
     Route::Get('/sliders', [SliderController::class, 'sliders']);
+    Route::post('/saveslider', [SliderController::class, 'saveslider']);
+
 
     Route::Get('/addproduct', [ProductController::class, 'addproduct']);
     Route::Get('products', [ProductController::class, 'products']);

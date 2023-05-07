@@ -31,36 +31,64 @@
           <div class="card card-warning">
             <div class="card-header">
               <h3 class="card-title">Add slider</h3>
+              @if (Session::has('status'))
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">x</button>  
+                    {{Session::get('status')}}
+                  </div>  
+              @endif
+            {{-- Dislay if category not unique & give error   --}}
+            @if(count($errors) > 0)
+              <div class="alert alert-danger">
+                  <button type="button" class="close" data-dismiss="alert">x</button>
+                  <strong>Dang!</strong> There were some problems with your input:<br>
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                      </li>{{$error}}</li>
+                      @endforeach
+                </ul>
+              </div>  
+            @endif
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form >
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Slider description 1</label>
-                  <input type="text" name="description1" class="form-control" id="exampleInputEmail1" placeholder="Enter slider description">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Slider description 2</label>
-                  <input type="text" name="description2" class="form-control" id="exampleInputEmail1" placeholder="Enter slider description">
-                </div>
-                <label for="exampleInputFile">Slider image</label>
-                <div class="input-group">
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+            {!!Form::open(['action' => 'App\Http\Controllers\SliderController@saveslider',
+            'method'  =>  'POST','enctype' => 'multipart/form-data'])!!}
+            {{csrf_field()}}
+            <div class="card-body">
+                  <div class="form-group">
+                    {{Form::label('', 'Description One', ['for' => 'exampleInputEmail1'] )}}
+                    {{ Form::text('description1', '', ['class' => 'form-control', 'placeholder' => 'Enter description 1']) }}
+                    {{-- <label for="exampleInputEmail1">Product name</label>
+                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
                   </div>
-                  <div class="input-group-append">
-                    <span class="input-group-text">Upload</span>
+                  <div class="form-group">
+                    {{Form::label('', 'Description Two', ['for' => 'exampleInputEmail1'] )}}
+                    {{ Form::text('description2', '', ['class' => 'form-control', 'placeholder' => 'Enter description 2']) }}
+                    {{-- <label for="exampleInputEmail1">Product name</label>
+                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
                   </div>
+
+              <label for="exampleInputFile">Slider image</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  {{Form::file('slider_image', ['class' => 'custom-file-input', 'id' => 'exampleInputFile'])}}
+                  {{Form::label('', 'Choose file', ['class' => 'custom-file-label'])}}
+                  {{-- <input type="file" class="custom-file-input" id="exampleInputFile">
+                  <label class="custom-file-label" for="exampleInputFile">Choose file</label> --}}
+                </div>
+
+                
+                <div class="input-group-append">
+                  <span class="input-group-text">Upload</span>
                 </div>
               </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <!-- <button type="submit" class="btn btn-warning">Submit</button> -->
-                <input type="submit" class="btn btn-warning" value="Save" >
-              </div>
-            </form>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              {{Form::submit('Save', ['class' => 'btn btn-success'])}}
+            </div>
+            {!!Form::close()!!}
           </div>
           <!-- /.card --> 
           </div>
