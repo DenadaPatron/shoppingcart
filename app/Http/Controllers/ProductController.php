@@ -114,7 +114,7 @@ class ProductController extends Controller
 
         $product->update();
 
-        return redirect('/products')->with('status', 'Product updated Successfully!');
+        return redirect('/products')->with('status', 'Product updated successfully!');
     }
 
     public function delete_product($id){
@@ -126,10 +126,24 @@ class ProductController extends Controller
 
         $product -> delete();
 
-        return back()->with('status', 'Product has been removed uccessfully!');
+        return back()->with('status', 'Product has been removed successfully!');
     }
 
-    
+    public function activate_product($id){
+        $product = Product::find($id);
+
+        $product->status = 1;
+        $product->update();
+        return back()->with('status', 'Product has been activated successfully!');
+    }
+
+    public function deactivate_product($id){
+        $product = Product::find($id);
+
+        $product->status = 0;
+        $product->update();
+        return back()->with('status', 'Product has been deactivated uccessfully!');
+    }
 
  
 

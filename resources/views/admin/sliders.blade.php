@@ -42,36 +42,28 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <img src="backend/dist/img/user2-160x160.jpg" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
-                    </td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>5</td>
-                    <td>
-                      <a href="#" class="btn btn-warning">Activate</a>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                      <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <img src="backend/dist/img/user2-160x160.jpg" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
-                    </td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>5</td>
-                    <td>
-                      <a href="#" class="btn btn-success">Unactivate</a>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                      <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                    </td>
-                  </tr>
+                    @foreach ($sliders as $slider)
+                    <tr>
+                        <td>{{$increment}}</td>
+                        <td> 
+                            <img src="storage/slider_images/{{$slider->slider_image}}" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
+                        </td>
+                        <td>{{$slider->slider_name}}</td>
+                        <td>{{$slider->slider_category}}</td>
+                        <td>{{$slider->slider_price . ' €'}}</td>
+                        <td>
+                            @if($slider->status == 1)
+                                <a href="{{url('/deactivate_slider/' . $slider->id)}}" class="btn btn-success">Unactivate</a>
+                            @else
+                                <a href="{{url('/activate_slider/' . $slider->id)}}" class="btn btn-warning">Activate</a>
+                            @endif
+                            <a href="{{ url('/edit_slider/' . $slider->id) }}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
+                            <a href="{{ url('/delete_slider/' . $slider->id) }}" id="delete" class="btn btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{Form::hidden('', $increment = $increment + 1)}}
+                @endforeach
+                
                   </tbody>
                   <tfoot>
                   <tr>
