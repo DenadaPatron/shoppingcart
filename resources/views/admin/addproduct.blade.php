@@ -52,14 +52,16 @@
                   </div>
                   <div class="form-group">
                     {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2'])}}
+                    
                     {{-- {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2', 'style' => 'width: 100%;' --}}
+
                     {{-- <label>Product category</label> --}}
                     {{-- <label>Product category</label> --}}
-                    <select class="form-control select2" style="width: 100%;">
+                    {{-- <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">Fruit</option>
                       <option>Juice</option>
                       <option>Vegetable</option>
-                    </select>
+                    </select> --}}
                     
                   </div>
                   <label for="exampleInputFile">Product image</label>
