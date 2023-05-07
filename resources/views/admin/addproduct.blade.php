@@ -34,8 +34,26 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{-- <form id="quickForm"> --}}
-                {{Form::open(['action' => 'App\Http\Controllers\ProductController@saveproduct',
-                'method'  =>  'POST','enctype' => 'multipart/form-data'])}}
+                @if (Session::has('status'))
+                <div class="alert alert-success">
+                  <button type="button" class="close" data-dismiss="alert">x</button>  
+                  {{Session::get('status')}}
+                </div>  
+                @endif
+          {{-- Dislay if category not unique & give error   --}}
+              @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong>Dang!</strong> There were some problems with your input:<br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                  </ul>
+                </div>  
+              @endif
+                {!!Form::open(['action' => 'App\Http\Controllers\ProductController@saveproduct',
+                'method'  =>  'POST','enctype' => 'multipart/form-data'])!!}
                 {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
@@ -51,18 +69,22 @@
                     <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1"> --}}
                   </div>
                   <div class="form-group">
-                    {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2'])}}
-                    
-                    {{-- {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2', 'style' => 'width: 100%;' --}}
 
-                    {{-- <label>Product category</label> --}}
-                    {{-- <label>Product category</label> --}}
-                    {{-- <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">Fruit</option>
-                      <option>Juice</option>
-                      <option>Vegetable</option>
-                    </select> --}}
+                    {{-- Eloquent option --}}
+                    <label for="">Product Category</label>
+                    {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2'])}}
+
                     
+                  {{-- <label>Product category</label>
+                     <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Select</option>
+                      @foreach ($categories as $category)
+                      <option>{{$category->category_name}}</option>
+                      @endforeach
+                      {{-- <option>Juice</option> --}}
+                      {{-- <option>Vegetable</option> --}}
+                    {{-- </select> --}}
+                   
                   </div>
                   <label for="exampleInputFile">Product image</label>
                   <div class="input-group">
@@ -82,9 +104,9 @@
                   <!-- <button type="submit" class="btn btn-success">Submit</button> -->
                   
                   <input type="submit" class="btn btn-success" value="Save">
-                  {{Form::close()}}
+                  
                 </div>
-                {{Form::close()}}
+                {!!Form::close()!!}
               {{-- </form> --}}
             </div>
             <!-- /.card -->
