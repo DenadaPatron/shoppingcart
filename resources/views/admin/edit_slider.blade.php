@@ -53,19 +53,20 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            {!!Form::open(['action' => 'App\Http\Controllers\SliderController@editslider',
+            {!!Form::open(['action' => 'App\Http\Controllers\SliderController@updateslider',
             'method'  =>  'POST','enctype' => 'multipart/form-data'])!!}
             {{csrf_field()}}
             <div class="card-body">
                   <div class="form-group">
+                    {{Form::hidden('id', $slider->id)}}
                     {{Form::label('', 'Description One', ['for' => 'exampleInputEmail1'] )}}
-                    {{ Form::text('description1', '', ['class' => 'form-control', 'placeholder' => 'Enter description 1']) }}
+                    {{ Form::text('description1', $slider->description1, ['class' => 'form-control', 'placeholder' => 'Enter description 1']) }}
                     {{-- <label for="exampleInputEmail1">Product name</label>
                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
                   </div>
                   <div class="form-group">
                     {{Form::label('', 'Description Two', ['for' => 'exampleInputEmail1'] )}}
-                    {{ Form::text('description2', '', ['class' => 'form-control', 'placeholder' => 'Enter description 2']) }}
+                    {{ Form::text('description2', $slider->description2, ['class' => 'form-control', 'placeholder' => 'Enter description 2']) }}
                     {{-- <label for="exampleInputEmail1">Product name</label>
                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
                   </div>
