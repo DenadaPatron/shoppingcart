@@ -65,9 +65,9 @@
                   {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
-                    {{Form:hidden($category->id, '')}}
+                    {{Form::hidden($category->id, '')}}
                     {{Form::label('','Category name', ['for' => 'exampleInputEmail1'])}}
-                    {{Form::text('category_name',$category->$category_name,['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
+                    {{Form::text('category_name',$category->category_name,['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
                     {{-- <label for="exampleInputEmail1">Category name</label>
                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>

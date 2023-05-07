@@ -32,16 +32,16 @@ class CategoryController extends Controller
 
     public function edit_category(Request $request, $id)
     {
-        $category = Category::find($id);
-        return view('admin.edit_category');
-
-
-
-
         // $category = Category::find($id);
-        // return view('admin.edit_category')->with('category', $category);
+        // return view('admin.edit_category');
+
+
+
+
+        $category = Category::find($id);
+        return view('admin.edit_category')->with('category', $category);
     }
     public function updatecategory(Request $request){
-        
+
     }
 }
