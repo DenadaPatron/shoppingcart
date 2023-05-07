@@ -97,16 +97,29 @@ class SliderController extends Controller
     }
 
     public function delete_slider($id){
-        $slider =  Product::find($id);
+        $slider =  Slider::find($id);
 
-        if($slider->slider_image != 'noimage.jpg'){
-            Storage::delete('public/slider_images/'.$slider->slider_image);
-        }
+        
+        Storage::delete('public/slider_images/'.$slider->slider_image);
+        
 
         $slider -> delete();
 
         return back()->with('status', 'Slider has been removed successfully!');
     }
 
+    public function activate_slider($id){
+        $slider = Slider::find($id);
+        $slider->status = 1;
+        $slider->update();
+        return back()->with('status', 'Slider has been activated successfully!');
+    }
+
+    public function deactivate_slider($id){
+        $slider = Slider::find($id);
+        $slider->status = 0;
+        $slider->update();
+        return back()->with('status', 'Slider has been deactivated successfully!');
+    }
 }
 
