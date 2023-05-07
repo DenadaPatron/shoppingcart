@@ -1,6 +1,7 @@
 @extends('admin_layout.admin')
 
 @section('content')
+{{Form::hidden('', $increment=1)}}
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -45,7 +46,7 @@
                   <tbody>
                     @foreach($products as $product)
                         <tr>
-                          <td>1</td>
+                          <td>{{$increment}}</td>
                           <td> 
                               <img src="storage/product_images/{{$product->product_image}}" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
                           </td>
@@ -58,6 +59,7 @@
                             <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                           </td>
                         </tr>
+                        {{Form::hidden('', $increment = $increment + 1)}}
                         @endforeach  
                           <th>Num.</th>
                           <th>Picture</th>
