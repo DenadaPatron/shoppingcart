@@ -43,9 +43,6 @@
 @include('admin_layout.leftsidebar')
 {{-- end left sidebar --}}
 
-
-  
-
 {{--start content--}}
 @yield('content')
 {{--end content--}}

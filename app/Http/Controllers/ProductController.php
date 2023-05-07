@@ -9,13 +9,14 @@ class ProductController extends Controller
 {
     public function addproduct() 
     {
-        return view('admin.addproduct');
+        $categories = Category::All()->pluck('category_name');
+        return view('admin.addproduct')->with('categories', $categories);
     }
 
     public function products()
     {
-        $categories = Category::all();
-        return view('admin.products')->with('categories', $categories);
+        
+        return view('admin.products');
     }
     public function saveproduct(Request $request)
     {
