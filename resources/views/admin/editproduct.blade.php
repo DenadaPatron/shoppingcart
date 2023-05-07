@@ -52,19 +52,20 @@
                   </ul>
                 </div>  
               @endif
-                {!!Form::open(['action' => 'App\Http\Controllers\ProductController@saveproduct',
+                {!!Form::open(['action' => 'App\Http\Controllers\ProductController@updateproduct',
                 'method'  =>  'POST','enctype' => 'multipart/form-data'])!!}
                 {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
+                    {{Form::hidden('id', $product->id)}}
                     {{Form::label('', 'Product name')}}
-                    {{ Form::text('product_name', '', ['class' => 'form-control', 'placeholder' => 'Enter product name']) }}
+                    {{ Form::text('product_name', $product->product_name, ['class' => 'form-control', ]) }}
                     {{-- <label for="exampleInputEmail1">Product name</label>
                     <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
                   </div>
                   <div class="form-group">
                     {{Form::label('', 'Product price')}}
-                    {{Form::input('number','product_price', '', ['class' => 'form-control', 'placeholder' => 'Enter product price', 'min' => '1'])}}
+                    {{Form::input('number','product_price', $product->product_price, ['class' => 'form-control', 'min' => '1'])}}
                     {{-- <label for="exampleInputEmail1">Product price</label>
                     <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1"> --}}
                   </div>
@@ -72,7 +73,7 @@
 
                     {{-- Eloquent option --}}
                     <label for="">Product Category</label>
-                    {{Form::select('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control select2'])}}
+                    {{Form::select('product_category', $categories, $product->product_category, ['placeholder' => 'Select category', 'class' => 'form-control select2'])}}
 
                     
                   {{-- <label>Product category</label>
@@ -103,7 +104,8 @@
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-success">Submit</button> -->
                   {{-- <input type="submit" class="btn btn-success" value="Save"> --}}
-                  {{Form::submit('Save', ['class' => 'btn btn-success'])}}
+                  {{Form::submit('Update', ['class' => 'btn btn-success'])}}
+                  
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}
