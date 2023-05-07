@@ -30,6 +30,12 @@
               <div class="card-header">
                 <h3 class="card-title">All categories</h3>
               </div>
+              {{-- update on upload status --}}
+              @if (Session::has ('status'))
+              <div class="alert alert-success">
+              {{Session::get('status')}} 
+              </div> 
+              @endif
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -48,7 +54,7 @@
                   <td>{{$category->category_name}}</td>
                   <td>
                     <a href="{{url('/edit_category/'.$category->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                    <a href="#" id="{{url('/delete_category'.$category->id)}}" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
+                    <a href="{{url('/delete_category/'.$category->id)}}" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                   </td>
                 </tr>
                 {{Form::hidden('', $increment++)}}

@@ -65,7 +65,8 @@
                   {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
-                    {{Form::hidden($category->id, '')}}
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    {{Form::hidden('id', $category->id)}}
                     {{Form::label('','Category name', ['for' => 'exampleInputEmail1'])}}
                     {{Form::text('category_name',$category->category_name,['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
                     {{-- <label for="exampleInputEmail1">Category name</label>
@@ -75,7 +76,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                  {{Form::submit('Save', ['class' => 'btn btn-primary' ])}}
+                  {{Form::submit('Update', ['class' => 'btn btn-primary' ])}}
                   {{-- <input type="submit" class="btn btn-primary" value="Save" > --}}
                 </div>
                 {!!Form::close()!!}

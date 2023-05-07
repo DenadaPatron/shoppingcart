@@ -43,5 +43,19 @@ class CategoryController extends Controller
     }
     public function updatecategory(Request $request){
 
+        $this->validate($request, ['category_name' => 'required']);
+
+        $category = Category::find($request->input('id'));
+        $category->category_name = $request->input('category_name');
+        $category->update();
+
+        return redirect('/categories')->with('status', 'Updated Successfully!');
+    }
+    public function delete_category($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('/categories')->with('status', 'Deleted Successfully!');
     }
 }
