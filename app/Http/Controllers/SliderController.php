@@ -15,7 +15,7 @@ class SliderController extends Controller
     public function sliders()
     {
         $sliders = Slider::All();
-        return view('admin.sliders')->with('sliders');
+        return view('admin.sliders')->with('sliders', $sliders);
     } 
 
     public function saveslider(Request $request)
@@ -50,5 +50,11 @@ class SliderController extends Controller
         $slider->save();
 
         return back()->with('status', 'Slider saved successfully');
+    }
+
+    public function editslider($id)
+    {
+        $slider = Slider::find($id);
+        return view('admin.editslider')->with('slider', $slider);
     }
 }

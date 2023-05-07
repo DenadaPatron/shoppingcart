@@ -1,6 +1,7 @@
 @extends('admin_layout.admin')
 
 @section('content')
+{{Form::hidden('', $increment = 1)}}
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -48,17 +49,17 @@
                         <td> 
                             <img src="storage/slider_images/{{$slider->slider_image}}" style="height : 50px; width : 50px" class="img-circle elevation-2" alt="User Image">
                         </td>
-                        <td>{{$slider->slider_name}}</td>
-                        <td>{{$slider->slider_category}}</td>
-                        <td>{{$slider->slider_price . ' €'}}</td>
+                        <td>{{$slider->description1}}</td>
+                        <td>{{$slider->description2}}</td>
+                        
                         <td>
                             @if($slider->status == 1)
                                 <a href="{{url('/deactivate_slider/' . $slider->id)}}" class="btn btn-success">Unactivate</a>
                             @else
                                 <a href="{{url('/activate_slider/' . $slider->id)}}" class="btn btn-warning">Activate</a>
                             @endif
-                            <a href="{{ url('/edit_slider/' . $slider->id) }}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                            <a href="{{ url('/delete_slider/' . $slider->id) }}" id="delete" class="btn btn-danger"><i class="nav-icon fas fa-trash"></i></a>
+                                <a href="{{ url('/edit_slider/' . $slider->id) }}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
+                                <a href="{{ url('/delete_slider/' . $slider->id) }}" id="delete" class="btn btn-danger"><i class="nav-icon fas fa-trash"></i></a>
                         </td>
                     </tr>
                     {{Form::hidden('', $increment = $increment + 1)}}
