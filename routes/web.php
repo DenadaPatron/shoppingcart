@@ -45,6 +45,7 @@ use App\Http\Controllers\ProductController;
 
     Route::Get('/addproduct', [ProductController::class, 'addproduct']);
     Route::Get('/products', [ProductController::class, 'products']);
+    Route::Post('/saveproduct', [ProductController::class, 'saveproduct']);
 
 
 // Route::get('/', function () {
