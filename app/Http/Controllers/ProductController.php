@@ -13,7 +13,8 @@ class ProductController extends Controller
     {   
         //view all products
         //only show products with status = 1
-        $produts = Product::All()->where('status', 1);
+        $produts = Product::All();
+        //where('status', 1)
         //return to page with all products from Product model
         return view('admin.products')->with('products', $produts);
     }
