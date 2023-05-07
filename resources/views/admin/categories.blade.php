@@ -1,7 +1,7 @@
 @extends('admin_layout.admin')
 
 @section('content')
-
+{{Form::hidden('', $increment=1)}}
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -41,26 +41,20 @@
                   </tr>
                   </thead>
                   <tbody>
+                  
+                  @foreach($categories as $category)
                   <tr>
-                    <td>1</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                      <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                      <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                    </td>
-                  </tr>
+                  <td>{{$increment}}</td>
+                  <td>{{$category->category_name}}</td>
+                  <td>
+                    <a href="{{url('/edit_category/'.$category->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
+                    <a href="#" id="{{url('/delete_category'.$category->id)}}" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {{Form::hidden('', $increment++)}}
+                  @endforeach  
+
+
                   </tbody>
                   <tfoot>
                   <tr>

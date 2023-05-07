@@ -30,17 +30,18 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add category</small></h3>
+                <h3 class="card-title">Edit category</small></h3>
               </div>
 
               {{-- display success message --}}
 
-              @if (Session::has('status'))
+              {{-- @if (Session::has('status'))
                   <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert">x</button>  
                     {{Session::get('status')}}
                   </div>  
-              @endif
+              @endif --}}
+
             {{-- Dislay if category not unique & give error   --}}
             @if(count($errors) > 0)
               <div class="alert alert-danger">
@@ -59,13 +60,14 @@
               <!-- form start -->
 
               {{-- <form> --}}
-                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory',
+                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@updatecategory',
                               'method'  =>  'POST'])!!}
                   {{csrf_field()}}
                 <div class="card-body">
                   <div class="form-group">
+                    {{Form:hidden($category->id, '')}}
                     {{Form::label('','Category name', ['for' => 'exampleInputEmail1'])}}
-                    {{Form::text('category_name','',['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
+                    {{Form::text('category_name',$category->$category_name,['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}} 
                     {{-- <label for="exampleInputEmail1">Category name</label>
                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>
