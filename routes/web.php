@@ -46,7 +46,7 @@ use App\Http\Controllers\ProductController;
     Route::Get('/edit_slider/{id}', [SliderController::class, 'edit_slider']);
     Route::Post('/updateslider', [SliderController::class, 'updateslider']);
     Route::Get('/delete_slider/{id}', [SliderController::class, 'delete_slider']);
-    Route::Post('/activate_slider', [SliderController::class, 'activate_slider']);
+    Route::Get('/activate_slider/{id}', [SliderController::class, 'activate_slider']);
     Route::Get('/deactivate_slider/{id}', [SliderController::class, 'deactivate_slider']);
 
 
