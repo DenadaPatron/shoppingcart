@@ -26,9 +26,11 @@ Shop
 			  <div class="row justify-content-center">
 				  <div class="col-md-10 mb-5 text-center">
 					  <ul class="product-category">
-						  <li><a href="#" class="active">All</a></li>
+						  <li><a href="{{url('/shop')}}" class="{{request()->is('shop') ? 'active' : ''}}">All</a></li>
 						  @foreach($categories as $category)
-						  <li><a href="{{url('/view_product_by_category/' .$category->category_name)}}}">{{$category->category_name}}</a></li>
+						  <li><a href="{{url('/view_product_by_category/' . $category->category_name)}}" class="{{request()->is('view_product_by_category/' . $category->category_name) ? 'active' : ''}}">{{ $category->category_name }}</a></li>
+
+
 						  @endforeach
 					  </ul>
 				  </div>
@@ -40,7 +42,7 @@ Shop
 					{{-- @foreach($products as $product) --}}
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="product">
-							<a href="#" class="img-prod"><img class="img-fluid" src="storage/product_images/{{$product->product_image}}" alt="Colorlib Template">
+							<a href="#" class="img-prod"><img class="img-fluid" src="{{ asset('storage/product_images/' . $product->product_image) }}" alt="Colorlib Template">
 								<span class="status">30%</span>
 								<div class="overlay"></div>
 							</a>
@@ -56,7 +58,7 @@ Shop
 										<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 											<span><i class="ion-ios-menu"></i></span>
 										</a>
-										<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+										<a href="{{url('addtocart/' .$product->id)}}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 											<span><i class="ion-ios-cart"></i></span>
 										</a>
 										<a href="#" class="heart d-flex justify-content-center align-items-center ">

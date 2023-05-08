@@ -27,15 +27,19 @@
         <span class="oi oi-menu"></span> Menu
       </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
-          <li class="nav-item active"><a href="{{url('/shop')}}" class="nav-link">shop</a></li>      
-      <li class="nav-item cta cta-colored"><a href="{{url('/cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-    <li class="nav-item active"><a href={{url('/login')}} class="nav-link"><span class="fa fa-user"></span>Login</a></li>    
-
-        </ul>
-      </div>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{url('/shop')}}" class="nav-link">shop</a></li>
+                <li class="nav-item cta cta-colored">
+                    <a href="{{url('/cart')}}" class="nav-link">
+                        <span class="icon-shopping_cart"></span>
+                        [{{Session::has('cart') ? Session::get('cart')->totalQty : 0}}]
+                    </a>
+                </li>
+                <li class="nav-item active"><a href="{{url('/login')}}" class="nav-link"><span class="fa fa-user"></span>Login</a></li>
+            </ul>
+        </div>
     </div>
   </nav>
 <!-- END nav -->

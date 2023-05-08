@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
+use App\Cart;
+use Session;
 
 class ClientController extends Controller
 {
@@ -40,5 +42,18 @@ class ClientController extends Controller
 
     public function orders(){
         return view('admin.orders');
+    }
+
+    public function addtocart($id){
+        $product = Product::find($id);
+         
+        $oldCart = session()->has('cart') ? session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart ->add($product, $id);
+        Session::put('cart', $cart);
+
+        // dd(Session::get('cart'));
+        return back()->with('status', 'Product added to cart successfully');
+
     }
 }

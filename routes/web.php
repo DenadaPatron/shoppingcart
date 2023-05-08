@@ -23,6 +23,7 @@ use App\Http\Controllers\ProductController;
 
     Route::Get('/',[ClientController::class, 'home']);
     Route::Get('/shop', [ClientController::class, 'shop']);
+    Route::Get('addtocart/{id}', [ClientController::class, 'addtocart']);
     Route::Get('/cart', [ClientController::class, 'cart']);
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);
