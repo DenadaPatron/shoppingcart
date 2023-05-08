@@ -39,7 +39,7 @@
 								@if(Session::has('cart'))
 									@foreach($products as $product)
 									<tr class="text-center">
-										<td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+										<td class="product-remove"><a href="{{url('/removeItem/' . $product['product_id'])}}"><span class="ion-ios-close"></span></a></td>
 										
 										<td class="image-prod"><div class="img" style="background-image:url(/storage/product_images/{{$product['product_image']}});"></div></td>
 										

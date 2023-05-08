@@ -51,11 +51,11 @@
 
         }
 
-        // public function removeItem($id){
-        //     $this->totalQty -= $this->items[$id]['qty'];
-        //     $this->totalPrice -= $this->items[$id]['product_price'] * $this->items[$id]['qty'];
-        //     unset($this->items[$id]);
-        // }
+        public function removeItem($id){
+            $this->totalQty -= $this->items[$id]['qty'];
+            $this->totalPrice -= $this->items[$id]['product_price'] * $this->items[$id]['qty'];
+            unset($this->items[$id]);
+        }
 
 
     }

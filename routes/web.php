@@ -25,6 +25,7 @@ use App\Http\Controllers\ProductController;
     Route::Get('/shop', [ClientController::class, 'shop']);
     Route::Get('addtocart/{id}', [ClientController::class, 'addtocart']);
     Route::Post('/update_qty/{id}', [ClientController::class, 'update_qty']);
+    Route::Get('/removeitem/{id}', [ClientController::class, 'removeitem']);
     Route::Get('/cart', [ClientController::class, 'cart']);
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);

@@ -53,7 +53,7 @@ class ClientController extends Controller
 
     }
 
-    public function updateQty(Request $request){
+    public function update_qty(Request $request, $id){
         //print('the product id is '.$request->id.' And the product qty is '.$request->quantity);
         $oldCart = Session::has('cart')? Session::get('cart'):null;
         $cart = new Cart($oldCart);
@@ -61,7 +61,7 @@ class ClientController extends Controller
         Session::put('cart', $cart);
 
         //dd(Session::get('cart'));
-        return redirect::to('/cart');
+        return back();
     }
 
     public function cart()
@@ -74,6 +74,22 @@ class ClientController extends Controller
         $cart = new Cart($oldCart);
 
         return view('client.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function removeItem($product_id){
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($product_id);
+       
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }
+        else{
+            Session::forget('cart');
+        }
+
+        //dd(Session::get('cart'));
+        return redirect::to('/cart');
     }
     
 }
