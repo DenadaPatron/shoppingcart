@@ -76,10 +76,10 @@ class ClientController extends Controller
         return view('client.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
-    public function removeItem($product_id){
+    public function remove_from_cart($id){
         $oldCart = Session::has('cart')? Session::get('cart'):null;
         $cart = new Cart($oldCart);
-        $cart->removeItem($product_id);
+        $cart->removeItem($id);
        
         if(count($cart->items) > 0){
             Session::put('cart', $cart);
