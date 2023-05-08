@@ -31,7 +31,7 @@
                 <h3 class="card-title">All Sliders</h3>
                 @if (Session::has ('status'))
                 <div class="alert alert-success">
-                {{Session::get('status')}} 
+                   {{Session::get('status')}} 
                 </div> 
                 @endif
               </div>
