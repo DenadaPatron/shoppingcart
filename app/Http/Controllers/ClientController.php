@@ -67,7 +67,7 @@ class ClientController extends Controller
     public function cart()
     {
         if (!Session::has('cart')) {
-            return redirect('/cart');
+            return view('client.cart');
         }
 
         $oldCart = session()->has('cart') ? session()->get('cart') : null;
@@ -89,7 +89,7 @@ class ClientController extends Controller
         }
 
         //dd(Session::get('cart'));
-        return redirect::to('/cart');
+        return back();
     }
     
 }
