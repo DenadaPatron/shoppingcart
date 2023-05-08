@@ -24,10 +24,6 @@ class ClientController extends Controller
         return view('client.shop')->with('categories', $categories)->with('products', $products);
     }
 
-    public function cart(){
-        return view('client.cart');
-    }
-
     public function checkout(){
         return view('client.checkout');
     }
@@ -53,7 +49,20 @@ class ClientController extends Controller
         Session::put('cart', $cart);
 
         // dd(Session::get('cart'));
-        return back()->with('status', 'Product added to cart successfully');
+        return back();
 
     }
+
+    public function cart()
+    {
+        if (!Session::has('cart')) {
+            return redirect('/cart');
+        }
+
+        $oldCart = session()->has('cart') ? session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+        
+        return view('client.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+    
 }
