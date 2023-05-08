@@ -18,7 +18,7 @@ class ClientController extends Controller
 
     public function shop(){
         $categories = Category::All();
-        $products = Category::All()->where('status', 1);
+        $products = Product::All();
         return view('client.shop')->with('categories', $categories)->with('products', $products);
     }
 

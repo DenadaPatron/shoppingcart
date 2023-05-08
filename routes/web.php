@@ -58,6 +58,7 @@ use App\Http\Controllers\ProductController;
     Route::Get('/deactivate_product/{id}', [ProductController::class, 'deactivate_product']);
     Route::Get('/activate_product/{id}', [ProductController::class, 'activate_product']);
     Route::Post('/saveproduct', [ProductController::class, 'saveproduct']);
+    Route::Get('/view_product_by_category/{category_name}', [ProductController::class, 'view_product_by_category']);
 
 
 // Route::get('/', function () {

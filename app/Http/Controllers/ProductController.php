@@ -145,7 +145,12 @@ class ProductController extends Controller
         return back()->with('status', 'Product has been deactivated uccessfully!');
     }
 
- 
+    public function view_product_by_category($category_name){
+
+        $products = Product::All()->where('product_category', $category_name)->where('status', 1);
+        $categories = Category::All();
+        return view('client.shop')->with('products', $products)->with('categories', $categories);
+    }
 
 
 }

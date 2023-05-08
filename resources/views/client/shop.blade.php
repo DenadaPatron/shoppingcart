@@ -10,7 +10,7 @@ Shop
 
 	<!-- start content -->
 	
-    <div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('{{asset('frontend/images/bg_1.jpg')}}');">
 		<div class="container">
 		  <div class="row no-gutters slider-text align-items-center justify-content-center">
 			<div class="col-md-9 ftco-animate text-center">
@@ -28,7 +28,7 @@ Shop
 					  <ul class="product-category">
 						  <li><a href="#" class="active">All</a></li>
 						  @foreach($categories as $category)
-						  <li><a href="#">{{$category->category_name}}</a></li>
+						  <li><a href="{{url('/view_product_by_category/' .$category->category_name)}}}">{{$category->category_name}}</a></li>
 						  @endforeach
 					  </ul>
 				  </div>
@@ -36,8 +36,8 @@ Shop
 			  	
 
 				  <div class="row">
-
-					@foreach($products as $product)
+					@foreach ($products as $product)
+					{{-- @foreach($products as $product) --}}
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="product">
 							<a href="#" class="img-prod"><img class="img-fluid" src="storage/product_images/{{$product->product_image}}" alt="Colorlib Template">
@@ -48,7 +48,7 @@ Shop
 								<h3><a href="#">{{$product->product_name}}</a></h3>
 								<div class="d-flex">
 									<div class="pricing">
-										<p class="price"><span class="mr-2 price-dc">{{$product->product_price}}</span><span class="price-sale">{{$product->product_price * 0.80}}</span></p>
+										<p class="price"><span class="mr-2 price-dc">{{$product->product_price . '€'}}</span><span class="price-sale">{{$product->product_price * 0.80 . '€'}}</span></p>
 									</div>
 								</div>
 								<div class="bottom-area d-flex px-3">
