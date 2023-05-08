@@ -49,15 +49,18 @@
 										</td>
 										
 										<td class="price">{{$product['product_price']}}€</td>
-										<form action="">
+										<form action="{{url('/update_qty/' . $product['product_id'])}}" method="POST">
+											{{ csrf_field() }}
 											<td class="quantity">
 												<div class="input-group mb-3">
 												<input type="number" name="quantity" class="quantity form-control input-number" value="{{$product['qty']}}" min="1" max="100">
-											</div>
+												</div>
+												<input type="submit" class="btn btn-secondary" value="Update">
+											</td>
 										</form>
 										
 											
-									  </td>
+									  
 										
 										<td class="total">{{$product['qty']*$product['product_price']}}€</td>
 									  </tr><!-- END TR-->

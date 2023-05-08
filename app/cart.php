@@ -42,14 +42,14 @@
 
         }
 
-        // public function updateQty($id, $qty){
-        //     $this->totalQty -= $this->items[$id]['qty'];
-        //     $this->totalPrice -= $this->items[$id]['product_price'] * $this->items[$id]['qty'];
-        //     $this->items[$id]['qty'] = $qty;
-        //     $this->totalQty += $qty;
-        //     $this->totalPrice += $this->items[$id]['product_price'] * $qty;
+        public function updateQty($id, $qty){
+            $this->totalQty -= $this->items[$id]['qty'];
+            $this->totalPrice -= $this->items[$id]['product_price'] * $this->items[$id]['qty'];
+            $this->items[$id]['qty'] = $qty;
+            $this->totalQty += $qty;
+            $this->totalPrice += $this->items[$id]['product_price'] * $qty;
 
-        // }
+        }
 
         // public function removeItem($id){
         //     $this->totalQty -= $this->items[$id]['qty'];
