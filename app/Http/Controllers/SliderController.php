@@ -92,7 +92,7 @@ class SliderController extends Controller
                     $slider->slider_image = $fileNameToStore;
                 }
                     $slider->update();
-                    return redirect('/sliders')->with('status', 'Product updated successfully!');
+                    return back()->with('status', 'Slider updated successfully');
     
     }
 

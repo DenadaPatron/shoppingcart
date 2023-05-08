@@ -29,11 +29,16 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">All Sliders</h3>
+                @if (Session::has ('status'))
+                <div class="alert alert-success">
+                {{Session::get('status')}} 
+                </div> 
+                @endif
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
-                  <thead>
+        å          <thead>
                   <tr>
                     <th>Num.</th>
                     <th>Picture</th>
