@@ -39,6 +39,11 @@ class ClientController extends Controller
         return view('client.signup');
     }
 
+    public function create_account(Request $request){
+        $this->validate($request,  ['email' => 'email|required|unique:clients',
+                                    'password' => 'required|min:9'];)
+    }
+
     public function orders(){
         return view('admin.orders');
     }

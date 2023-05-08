@@ -30,6 +30,9 @@ use App\Http\Controllers\ProductController;
     Route::Get('/checkout', [ClientController::class, 'checkout']);
     Route::Get('/login', [ClientController::class, 'login']);
     Route::Get('/signup', [ClientController::class, 'signup']);
+    Route::Post('/create_account', [ClientController::class, 'create_account']);
+
+
     Route::Get('/orders', [ClientController::class, 'orders']);
 
 
@@ -51,6 +54,8 @@ use App\Http\Controllers\ProductController;
     Route::Get('/delete_slider/{id}', [SliderController::class, 'delete_slider']);
     Route::Get('/activate_slider/{id}', [SliderController::class, 'activate_slider']);
     Route::Get('/deactivate_slider/{id}', [SliderController::class, 'deactivate_slider']);
+
+
 
 
     Route::Get('/addproduct', [ProductController::class, 'addproduct']);
