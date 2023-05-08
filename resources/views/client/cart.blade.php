@@ -48,7 +48,7 @@
 											{{-- <p>{{$product['product_description']}}</p> --}}
 										</td>
 										
-										<td class="price">{{$product['product_price']}}€</td>
+									 	<td class="price">{{$product['product_price']}}€</td>
 										<form action="{{url('/update_qty/' . $product['product_id'])}}" method="POST">
 											{{ csrf_field() }}
 											<td class="quantity">
