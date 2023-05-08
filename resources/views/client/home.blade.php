@@ -6,10 +6,10 @@ Home
 
 @section('content')
 	<!-- start content -->
-   <section id="home-section" class="hero">
-		<div class="home-slider owl-carousel">
+   <section id="home-section" class="hero vh-100 d-flex align-items-center">
+		<div class="home-slider owl-carousel vh-100 d-flex align-items-center">
 			@foreach ($sliders as $slider)
-			<div class="slider-item" style="background-image: url(storage/slider_images/{{$slider->slider_image}});">
+			<div class="slider-item vh-100 d-flex align-items-center" style="background-image: url(storage/slider_images/{{$slider->slider_image}}); background-size: cover; background-position: center; height: 100%;">
 				<div class="overlay"></div>
 			  <div class="container">
 				<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">

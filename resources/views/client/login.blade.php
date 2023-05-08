@@ -45,7 +45,21 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
-
+					@if(count($errors) > 0)
+					<div class="alert alert-danger">
+						<ul>
+							@foreach($errors->all() as $error)
+								<li>{{$error}}</li>
+							@endforeach
+								
+						</ul>		
+					</div>
+					@endif
+					@if(Session::has('status'))
+					<div class="alert alert-success">
+						{{Session::get('status')}}
+					</div>
+					@endif
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Client;
 use App\Cart;
 use Session;
 
@@ -41,7 +42,15 @@ class ClientController extends Controller
 
     public function create_account(Request $request){
         $this->validate($request,  ['email' => 'email|required|unique:clients',
-                                    'password' => 'required|min:9'];)
+                                    'password' => 'required|min:9']);
+
+        $client = new Client();
+        $client->email = $request->input('email');
+        $client->password = bcrypt($request->input('password'));
+        
+        $client->save();
+
+        return redirect('/login')->with('status', 'Account created successfully');
     }
 
     public function orders(){
