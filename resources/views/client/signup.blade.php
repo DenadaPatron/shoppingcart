@@ -43,7 +43,17 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						New account
 					</span>
-
+						@if(count($errors) > 0)
+						<div class="alert alert-danger">
+							<ul>
+								@foreach($errors->all() as $error)
+									<li>{{$error}}</li>
+								@endforeach
+									
+									
+							</ul>		
+							</div>
+						@endif
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="email" name="email" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
