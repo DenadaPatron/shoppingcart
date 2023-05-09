@@ -58,7 +58,7 @@
 					</div>
 					@endif
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="email" name="email" placeholder="Username">
+						<input class="input100" type="text" name="email" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 

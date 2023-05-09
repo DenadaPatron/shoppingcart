@@ -91,7 +91,7 @@ class ClientController extends Controller
         if($client){
             if(Hash::check($request->input('password'), $client->password)){
                 Session::put('client', $client);
-                return redirect('/shop');
+                return redirect('/admin');
             }else{
                 return back()->with('status', 'Bad credentials!')->withInput();
 
