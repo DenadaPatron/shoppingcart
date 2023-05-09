@@ -31,8 +31,8 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Vegefoods</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            <h2 class="ftco-heading-2">Piercify Inc.</h2>
+            <p>Discover our stunning collection of featured piercing products, showcasing unique designs and exceptional craftsmanship for that perfect statement piece.</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -42,12 +42,13 @@
         </div>
         <div class="col-md">
           <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Menu</h2>
+            <h2 class="ftco-heading-2">Categories</h2>
             <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">Shop</a></li>
-              <li><a href="#" class="py-2 d-block">About</a></li>
-              <li><a href="#" class="py-2 d-block">Journal</a></li>
-              <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+              <li><a href="/view_product_by_category/Labrets" class="py-2 d-block">Labrets</a></li>
+              <li><a href="/view_product_by_category/Helix" class="py-2 d-block">Helix</a></li>
+              <li><a href="/view_product_by_category/Nose" class="py-2 d-block">Nose</a></li>
+              <li><a href="/view_product_by_category/Earrings" class="py-2 d-block">Earrings</a></li>
+              <li><a href="/view_product_by_category/Segment Rings" class="py-2 d-block">Segment rings</a></li>
             </ul>
           </div>
         </div>
@@ -61,10 +62,6 @@
                 <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
                 <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
               </ul>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">FAQs</a></li>
-                <li><a href="#" class="py-2 d-block">Contact</a></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -73,9 +70,9 @@
             <h2 class="ftco-heading-2">Have a Questions?</h2>
             <div class="block-23 mb-3">
               <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                <li><span class="icon icon-map-marker"></span><span class="text">Jasinskio g. 17, Vilnius, Lithuania | LT-0111</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+370 643 15151</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@us.com</span></a></li>
               </ul>
             </div>
           </div>
@@ -85,7 +82,7 @@
         <div class="col-md-12 text-center">
 
           <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Piercify <i class="icon-heart color-danger" aria-hidden="true"></i>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
