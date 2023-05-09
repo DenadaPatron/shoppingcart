@@ -32,6 +32,10 @@ class ClientController extends Controller
             return view('client.login');
         }
 
+        if(!Session::has('cart')){
+            return view('client.cart');
+        }
+
         return view('client.checkout');
     }
 
@@ -97,7 +101,15 @@ class ClientController extends Controller
     }
 
     public function orders(){
-        return view('admin.orders');
+        $orders = Order::All();
+
+        $orders->transform(function($order, $key){
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        
+
+        return view('admin.orders')->with('orders', $orders);
     }
 
     public function addtocart($id){
