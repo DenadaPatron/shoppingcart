@@ -18,7 +18,7 @@
   </section>
 
 
-
+<div id="app">
   <footer class="ftco-footer ftco-section">
     <div class="container">
       <div class="row">
@@ -33,6 +33,9 @@
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Piercify Inc.</h2>
             <p>Discover our stunning collection of featured piercing products, showcasing unique designs and exceptional craftsmanship for that perfect statement piece.</p>
+            @verbatim
+            <my-message></my-message>
+             @endverbatim
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
               <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -81,14 +84,16 @@
       <div class="row">
         <div class="col-md-12 text-center">
 
-          <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Piercify <i class="icon-heart color-danger" aria-hidden="true"></i>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          <p>
+            Copyright &copy; <span v-text="currentYear"></span> All rights reserved | Piercify <i class="icon-heart color-danger" aria-hidden="true"></i>
           </p>
+          
+          
         </div>
       </div>
     </div>
   </footer>
+</div>
   
 
 

@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
@@ -37,7 +40,9 @@
   {{-- end content --}}
 
   {{-- footer start --}}
+  <div id="app">
       @include('client_layout.footer')
+  </div>
   {{-- footer end --}}
  
 
@@ -57,6 +62,26 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{asset('frontend/js/google-map.js')}}"></script>
 <script src="{{asset('frontend/js/main.js')}}"></script>
+
+<script>
+    Vue.component('my-message', {
+      template: '<p v-text="message"></p>',
+      data() {
+        return {
+          message: 'Hello from Vue.js component!'
+        };
+      }
+    });
+
+    new Vue({
+      el: '#app',
+      computed: {
+        currentYear() {
+          return new Date().getFullYear();
+        }
+      }
+    });
+    </script>
 @yield('script')
   
 </body>
