@@ -7,7 +7,9 @@ use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Client;
+use App\Models\Order;
 use App\Cart;
+use Illuminate\Support\Facades\Hash;
 use Session;
 
 class ClientController extends Controller
@@ -29,11 +31,35 @@ class ClientController extends Controller
         if(!Session::has('client')){
             return view('client.login');
         }
+
         return view('client.checkout');
     }
 
     public function login(){
         return view('client.login');
+    }
+
+    public function logout(){
+        Session::forget('client');
+
+        return redirect('/');
+    }
+
+    public function postcheckout(Request $request){
+
+        $oldCart = session()->has('cart') ? session()->get('cart') : null;
+        $cart = new Cart($oldCart);
+
+        $order = new Order();
+        $order->name = $request->input('name');
+        $order->address = $request->input('address');
+        $order->cart = serialize($cart); 
+
+        $order->save();
+
+        Session::forget('cart');
+
+        return redirect('/cart')->with('status', 'Order placed successfully!');
     }
 
     public function signup(){
@@ -51,6 +77,23 @@ class ClientController extends Controller
         $client->save();
 
         return redirect('/login')->with('status', 'Account created successfully');
+    }
+
+    public function access_account(Request $request){
+        $this->validate($request,  ['email' => 'email|required',
+                                    'password' => 'required|min:9']);
+
+        $client = Client::where('email', $request->input('email'))->first();
+        if($client){
+            if(Hash::check($request->input('password'), $client->password)){
+                Session::put('client', $client);
+                return redirect('/shop');
+            }else{
+                return back('status')->with('status', 'Bad credentials!');
+            }
+        }else{
+            return back('status')->with('status', 'Invalid login details');
+        }
     }
 
     public function orders(){

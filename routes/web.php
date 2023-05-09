@@ -31,7 +31,10 @@ use App\Http\Controllers\ProductController;
     Route::Get('/login', [ClientController::class, 'login']);
     Route::Get('/signup', [ClientController::class, 'signup']);
     Route::Post('/create_account', [ClientController::class, 'create_account']);
-
+    Route::Post('/access_account', [ClientController::class, 'access_account']);
+    Route::Get('/logout', [ClientController::class, 'logout']);
+    Route::Post('/postcheckout', [ClientController::class, 'postcheckout']);
+ 
 
     Route::Get('/orders', [ClientController::class, 'orders']);
 

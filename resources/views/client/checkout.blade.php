@@ -10,7 +10,7 @@ Checkout
 		<div class="container">
 		  <div class="row no-gutters slider-text align-items-center justify-content-center">
 			<div class="col-md-9 ftco-animate text-center">
-				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Checkout</span></p>
+				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Arriving</a></span> <span>Soon</span></p>
 			  <h1 class="mb-0 bread">Checkout</h1>
 			</div>
 		  </div>
@@ -21,7 +21,8 @@ Checkout
 		<div class="container">
 		  <div class="row justify-content-center">
 			<div class="col-xl-7 ftco-animate">
-				  <form action="#" class="billing-form">
+				  <form action="{{url('/postcheckout')}}" method="POST" class="billing-form">
+					{{csrf_field()}}
 					  <h3 class="mb-4 billing-heading">Billing Details</h3>
 					  <div class="row align-items-end">
 						  <div class="col-md-12">
@@ -36,36 +37,8 @@ Checkout
 							  <input type="text" class="form-control"  name="address">
 							  </div>
 						  </div>
-						  <div class="col-md-12">
-							  <div class="form-group">
-								  <label for="lastname">Name on Card</label>
-							  <input type="text" class="form-control" id="card-name" name="card_name">
-							  </div>
-						  </div>
-						  <div class="col-md-12">
-							  <div class="form-group">
-								  <label for="lastname">Number</label>
-							  <input type="text" class="form-control" id="card-number">
-							  </div>
-						  </div>
-						  <div class="col-md-6">
-							  <div class="form-group">
-								  <label for="lastname">Expiration Month</label>
-							  <input type="text" id="card-expiry-month" class="form-control">
-							  </div>
-						  </div>
-						  <div class="col-md-6">
-							  <div class="form-group">
-								  <label for="lastname">Expiration Year</label>
-							  <input type="text" id="card-expiry-year" class="form-control">
-							  </div>
-						  </div>
-						  <div class="col-md-12">
-							  <div class="form-group">
-								  <label for="lastname">CVC</label>
-							  <input type="text" id="card-cvc" class="form-control">
-							  </div>
-						  </div>
+						 
+						  
 						  <div class="col-md-12">
 							  <div class="form-group">
 							  <input type="submit" class="btn btn-primary" value="Buy Now">

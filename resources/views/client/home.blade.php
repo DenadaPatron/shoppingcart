@@ -127,9 +127,8 @@ Home
 
   <section class="ftco-section">
 	  <div class="container">
-			  <div class="row justify-content-center mb-3 pb-3">
+			  <div class="row justify-content-center mb-1 pb-3">
 		<div class="col-md-12 heading-section text-center ftco-animate">
-			<span class="subheading">Featured Products</span>
 		  <h2 class="mb-4">Our Products</h2>
 		  <p>Discover our stunning collection of featured piercing products, showcasing unique designs and exceptional craftsmanship for that perfect statement piece.</p>
 		</div>

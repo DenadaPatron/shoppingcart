@@ -35,9 +35,7 @@
 				<form class="login100-form validate-form" action="{{ url('/create_account') }}" method="POST">
 					@csrf
 						<a href="{{url('/')}}">
-							<span class="login100-form-logo">
-									<i class="zmdi zmdi-invert-colors"></i>
-							</span>
+
 						</a>
 
 					<span class="login100-form-title p-b-34 p-t-27">
@@ -60,7 +58,7 @@
 							</div>
 						@endif
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="email" placeholder="Username">
+						<input class="input100" type="email" name="email" placeholder="Username">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
