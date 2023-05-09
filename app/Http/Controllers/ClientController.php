@@ -122,7 +122,7 @@ class ClientController extends Controller
         Session::put('cart', $cart);
 
         // dd(Session::get('cart'));
-        return back();
+        return redirect('shop');
 
     }
 

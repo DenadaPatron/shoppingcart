@@ -10,6 +10,11 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{url('/shop')}}" class="nav-link">Shop</a>
+        @if(Session::has('client'))
+        <li class="nav-item active">  <a href="{{url('/logout')}}" class="nav-link">Logout</a></li>
+        @else
+        <li class="nav-item active">  <a href="{{url('/login')}}" class="nav-link">Login</a></li>
+        @endif
       </li>
     </ul>
 
