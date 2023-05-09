@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
+use App\Models\Order;
 use Session;
 
 class PdfController extends Controller
@@ -11,15 +11,13 @@ class PdfController extends Controller
     //
 
     public function view_pdf($id){
-
         Session::put('id', $id);
         try{
-            $pdf = \App::make('dompdf.wrapper')->setPaper('a4', 'landscape');
+            $pdf = app('dompdf.wrapper')->setPaper('a4', 'landscape');
             $pdf->loadHTML($this->convert_orders_data_to_html());
-
             return $pdf->stream();
         }
-        catch(\ Exception $e){
+        catch(\Exception $e){
             return redirect('/orders')->with('error', $e->getMessage());
         }
     }

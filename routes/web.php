@@ -9,7 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PdfC;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ use App\Http\Controllers\PdfC;
     Route::Post('/saveproduct', [ProductController::class, 'saveproduct']);
     Route::Get('/view_product_by_category/{category_name}', [ProductController::class, 'view_product_by_category']);
 
-    Route::get('/viewpdforder/{id}', [ProductController::class, 'view_pdf']);
+    Route::Get('/viewpdforder/{id}', [PdfController::class, 'view_pdf']);
 
 
 // Route::get('/', function () {
