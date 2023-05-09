@@ -9,6 +9,7 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    //returns the 'admin.products' view with all products data.
     public function products()
     {   
         //view all products
@@ -20,7 +21,7 @@ class ProductController extends Controller
     }
 
 
-
+    //returns the 'admin.addproduct' view with all categories data.
     public function addproduct() 
     {
         $categories = Category::All()->pluck('category_name', 'category_name');
@@ -28,7 +29,7 @@ class ProductController extends Controller
     }
 
 
-
+    //saves the product data to the database.
     public function saveproduct(Request $request)
     {
         $this->validate($request, [
@@ -67,14 +68,14 @@ class ProductController extends Controller
 
         return back()->with('status', 'Product Added Successfully');
     }
-
+    //edits product from already existing ones
     public function edit_product($id){
         $product = Product::find($id);
         $categories = Category::All()->pluck('category_name', 'category_name');
         return view('admin.editproduct')->with('product', $product)->with('categories', $categories);
 
     }
-
+    //confirms validation
     public function updateproduct(Request $request){
 
         $this->validate($request, [
@@ -116,7 +117,7 @@ class ProductController extends Controller
 
         return redirect('/products')->with('status', 'Product updated successfully!');
     }
-
+    //deletes product and deletes image from storage if image is not noimage.jpg   
     public function delete_product($id){
         $product =  Product::find($id);
 
@@ -128,7 +129,7 @@ class ProductController extends Controller
 
         return back()->with('status', 'Product has been removed successfully!');
     }
-
+    //activates product by changing status to 1
     public function activate_product($id){
         $product = Product::find($id);
 
@@ -136,7 +137,7 @@ class ProductController extends Controller
         $product->update();
         return back()->with('status', 'Product has been activated successfully!');
     }
-
+    //deactivates product by changing status to 0
     public function deactivate_product($id){
         $product = Product::find($id);
 
@@ -144,7 +145,7 @@ class ProductController extends Controller
         $product->update();
         return back()->with('status', 'Product has been deactivated uccessfully!');
     }
-
+    //returns the 'client.shop' view with all products data based on category.
     public function view_product_by_category($category_name){
 
         $products = Product::All()->where('product_category', $category_name)->where('status', 1);
