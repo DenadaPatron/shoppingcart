@@ -9,7 +9,7 @@ use Session;
 class PdfController extends Controller
 {
     //
-
+    // takes the order ID and returns the 'admin.view_pdf' view with the order data.
     public function view_pdf($id){
         Session::put('id', $id);
         try{
@@ -21,7 +21,7 @@ class PdfController extends Controller
             return redirect('/orders')->with('error', $e->getMessage());
         }
     }
-
+    //converts orders data to html for the PDF.
     public function convert_orders_data_to_html(){
 
         $orders = Order::where('id',Session::get('id'))->get();
