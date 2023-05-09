@@ -18,7 +18,7 @@ Home
 							<h1 class="mb-2 opensans">{{$slider->description1}}</h1>
 							<h2 class="subheading mb-4">{{$slider->description2}}</h2>
 							{{-- &amp; fruits --}}
-							<p><a href="#" class="btn btn-primary">View Details</a></p>
+							<p><a href="{{url('/shop')}}" class="btn btn-primary">Shop now</a></p>
 						</div>
 	
 					</div>

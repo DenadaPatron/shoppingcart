@@ -21,7 +21,7 @@ use App\Http\Controllers\PdfController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    //Client controller routes
     Route::Get('/',[ClientController::class, 'home']);
     Route::Get('/shop', [ClientController::class, 'shop']);
     Route::Get('addtocart/{id}', [ClientController::class, 'addtocart']);
@@ -36,12 +36,13 @@ use App\Http\Controllers\PdfController;
     Route::Get('/logout', [ClientController::class, 'logout']);
     Route::Post('/postcheckout', [ClientController::class, 'postcheckout']);
  
-
+    //Order routes
     Route::Get('/orders', [ClientController::class, 'orders']);
 
-
+    //Admin routes
     Route::Get('/admin', [AdminController::class, 'admin']);
 
+    //Category routes
     Route::Get('/addcategory', [CategoryController::class, 'addcategory']);
     Route::Post('/savecategory', [CategoryController::class, 'savecategory']);
     Route::Get('/categories', [CategoryController::class, 'categories']);
@@ -49,7 +50,7 @@ use App\Http\Controllers\PdfController;
     Route::Post('/updatecategory', [CategoryController::class, 'updatecategory']);
     Route::Get('/delete_category/{id}', [CategoryController::class, 'delete_category']);
     
-
+    //Slider routes
     Route::Get('/addslider', [SliderController::class, 'addslider']);
     Route::Get('/sliders', [SliderController::class, 'sliders']);
     Route::Post('/saveslider', [SliderController::class, 'saveslider']);
@@ -59,9 +60,7 @@ use App\Http\Controllers\PdfController;
     Route::Get('/activate_slider/{id}', [SliderController::class, 'activate_slider']);
     Route::Get('/deactivate_slider/{id}', [SliderController::class, 'deactivate_slider']);
 
-
-
-
+    //Product Controller routes
     Route::Get('/addproduct', [ProductController::class, 'addproduct']);
     Route::Get('products', [ProductController::class, 'products']);
     Route::Get('/edit_product/{id}', [ProductController::class, 'edit_product']);
@@ -72,6 +71,7 @@ use App\Http\Controllers\PdfController;
     Route::Post('/saveproduct', [ProductController::class, 'saveproduct']);
     Route::Get('/view_product_by_category/{category_name}', [ProductController::class, 'view_product_by_category']);
 
+    //Pdf Controller routes
     Route::Get('/viewpdforder/{id}', [PdfController::class, 'view_pdf']);
 
 
