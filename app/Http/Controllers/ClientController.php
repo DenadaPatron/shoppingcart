@@ -93,10 +93,11 @@ class ClientController extends Controller
                 Session::put('client', $client);
                 return redirect('/shop');
             }else{
-                return back('status')->with('status', 'Bad credentials!');
+                return back()->with('status', 'Bad credentials!')->withInput();
+
             }
         }else{
-            return back('status')->with('status', 'Invalid login details');
+            return back()->with('status', 'Bad credentials!')->withInput();
         }
     }
 
