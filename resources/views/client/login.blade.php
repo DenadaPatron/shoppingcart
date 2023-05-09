@@ -36,7 +36,7 @@
 					
 						<a href="{{url('/')}}">
 							<span class="login100-form-logo">
-									<i class="zmdi zmdi-landscape"></i>
+									<i class="zmdi zmdi-invert-colors"></i>
 							</span>
 						</a>
 						
